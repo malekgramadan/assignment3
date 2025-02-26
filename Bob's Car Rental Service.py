@@ -1,4 +1,5 @@
-def cars():
-    print("This car.")
+class cars():
+    def display_info():
+        print("This car.")
 
-cars()
+cars.display_info()
