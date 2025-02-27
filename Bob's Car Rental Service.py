@@ -9,6 +9,7 @@ def display_info():
     model = input("Enter the car's model: ")
     year = input("Enter the year: ")
     rental_ppd = input("Enter the Rental per day: ")
-    print(f"Car: {brand} {model}, Year: {year}, Rental price: ${rental_ppd}/day")
+    brd = showRoom(brand)
+    print(f"Car: {brd} {model}, Year: {year}, Rental price: ${rental_ppd}/day")
 
 display_info()
