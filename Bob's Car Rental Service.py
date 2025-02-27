@@ -1,10 +1,5 @@
-class cars:
-    brand = " "
-    model = " "
-    year = 0
-    rental_ppd = 0
-
-    def display_info():
-        print("This car.")
-
-cars.display_info()
+class showRoom:
+    def __init__(self, brand, year, rental_ppd):
+        self.brand = brand
+        self.year = year
+        self.rental_ppd = rental_ppd
