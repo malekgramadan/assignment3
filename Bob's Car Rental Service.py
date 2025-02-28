@@ -15,3 +15,9 @@ class Car(Vehicle):
     def __init__(self, brand, model, year, rental_ppd, seats):
         super().__init__(brand, model, year, rental_ppd)
         self.seats = seats
+    
+    def display_info(self):
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self._Vehicle__rental_ppd}/day")
+
+car =[Car("Toyota", "Corolla", 2015, 50, 5)]
+car[0].display_info()
