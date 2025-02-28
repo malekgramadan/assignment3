@@ -8,8 +8,10 @@ class Vehicle:
         self.engine = engine
 
     def display_info(self):
-        print(f"Car: {self.brand} {self.model}, Year: {self.year},Seats: {self.seat_capacity}, Rental price: ${self.rental_ppd}/day")
-        print(f"Bike: {self.brand} {self.model}, Year: {self.year},Engine: {self.engine}, Rental price: ${self.rental_ppd}/day")
+        if self.seat_capacity:
+            print(f"Car: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seat_capacity}, Rental price: ${self.rental_ppd}/day")
+        else:
+            print(f"Bike: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}, Rental price: ${self.rental_ppd}/day")
 
     def calculate_rental_cost(self, days):
         return print(f"Rental cost for the {self.brand} {self.model} for {days} days: ${int(self.rental_ppd * days)}")
@@ -37,5 +39,5 @@ while action != 4:
         vehicletype = input("Enter the type of vehicle (Car/Bike): ")
         brand = input("Enter the vehicle brand: ")
         model = input("Enter the vehicle model: ")
-        year = input("Enter the year: ")
-        rental_ppd = input("Enter the Rental per day: ")
+        if vehicletype.lower() == "car":
+            year = input("Enter the year: ")
