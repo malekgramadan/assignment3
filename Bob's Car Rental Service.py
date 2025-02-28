@@ -1,4 +1,4 @@
-class showRoom:
+class Vechile:
     def __init__(self, brand, model, year, rental_ppd):
         self.brand = brand
         self.model = model
@@ -12,5 +12,5 @@ brand = input("Enter the car brand: ")
 model = input("Enter the car's model: ")
 year = input("Enter the year: ")
 rental_ppd = input("Enter the Rental per day: ")
-brd = showRoom(brand, model, year, rental_ppd)
-brd.display_info()
+car = Vechile(brand, model, year, rental_ppd)
+car.display_info()
