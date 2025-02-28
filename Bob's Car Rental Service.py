@@ -27,7 +27,7 @@ class Vehicle:
 cars = [ ]
 bikes = [ ]
 action = 0
-while action != 3:
+while action != 4:
     print("1. Add a Vehicle")
     print("2. Display all Vehicles")
     print("3. Calculate rental cost")
@@ -39,4 +39,3 @@ while action != 3:
         model = input("Enter the vehicle model: ")
         year = input("Enter the year: ")
         rental_ppd = input("Enter the Rental per day: ")
-        
