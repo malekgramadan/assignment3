@@ -9,7 +9,7 @@ class Vehicle:
         print(f"Brand: {self.brand}\nModel: {self.model}\nYear: {self.year}\nRental Price Per Day: ${self.__rental_ppd}/day")
 
     def calculate_rental_cost(self, days):
-        return print(f"Rental cost for the {self.brand} {self.model} for {days} days: ${int(self.rental_ppd * days)}")
+        return print(f"Rental cost for the {self.brand} {self.model} for {days} days: ${int(self.__rental_ppd * days)}")
 
 class Car(Vehicle):
     def __init__(self, brand, model, year, rental_ppd, seats):
@@ -31,3 +31,5 @@ car =[Car("Toyota", "Corolla", 2015, 50, 5)]
 bike = [Bike("Yamaha", "R1", 2019, 30, 998)]
 car[0].display_info()
 bike[0].display_info()
+car[0].calculate_rental_cost(3)
+bike[0].calculate_rental_cost(4)
