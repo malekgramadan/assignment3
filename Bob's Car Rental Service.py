@@ -1,33 +1,17 @@
 class Vehicle:
-    def __init__(self, brand, model, year, rental_ppd,seat_capacity,engine):
+    def __init__(self, brand, model, year, rental_ppd):
         self.brand = brand
         self.model = model
         self.year = year
-        self.rental_ppd = rental_ppd
-        self.seat_capacity = seat_capacity
-        self.engine = engine
+        self.__rental_ppd = rental_ppd
 
     def display_info(self):
-        if self.seat_capacity:
-            print(f"Car: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seat_capacity}, Rental price: ${self.rental_ppd}/day")
-        else:
-            print(f"Bike: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}, Rental price: ${self.rental_ppd}/day")
+        print(f"Brand: {self.brand}\nModel: {self.model}\nYear: {self.year}\nRental Price Per Day: ${self.__rental_ppd}/day")
 
     def calculate_rental_cost(self, days):
         return print(f"Rental cost for the {self.brand} {self.model} for {days} days: ${int(self.rental_ppd * days)}")
-    
-cars = [ ]
-bikes = [ ]
-action = 0
-while action != 4:
-    print("1. Add a Vehicle")
-    print("2. Display all Vehicles")
-    print("3. Calculate rental cost")
-    print("4. Exit")
-    action = int(input("Enter your choice: "))
-    if action == 1:
-        vehicletype = input("Enter the type of vehicle (Car/Bike): ")
-        brand = input("Enter the vehicle brand: ")
-        model = input("Enter the vehicle model: ")
-        if vehicletype.lower() == "car":
-            year = input("Enter the year: ")
+
+class Car(Vehicle):
+    def __init__(self, brand, model, year, rental_ppd, seats):
+        super().__init__(brand, model, year, rental_ppd)
+        self.seats = seats
