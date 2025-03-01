@@ -10,6 +10,9 @@ class Vehicle:
 
     def calculate_rental_cost(self, days):
         return print(f"Rental cost for the {self.brand} {self.model} for {days} days: ${int(self.__rental_ppd * days)}")
+    
+    def get_rental_ppd(self):
+        return self.__rental_ppd
 
 class Car(Vehicle):
     def __init__(self, brand, model, year, rental_ppd, seats):
@@ -17,7 +20,7 @@ class Car(Vehicle):
         self.seats = seats
     
     def display_info(self):
-        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self._Vehicle__rental_ppd}/day")
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self.get_rental_ppd}/day")
 
 class Bike(Vehicle):
     def __init__(self, brand, model, year, rental_ppd, engine):
@@ -25,7 +28,7 @@ class Bike(Vehicle):
         self.engine = engine
     
     def display_info(self):
-        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self._Vehicle__rental_ppd}/day")
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self.get_rental_ppd}/day")
 
 car =[Car("Toyota", "Corolla", 2015, 50, 5)]
 bike = [Bike("Yamaha", "R1", 2019, 30, 998)]
