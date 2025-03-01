@@ -13,6 +13,12 @@ class Vehicle:
     
     def get_rental_ppd(self):
         return self.__rental_ppd
+    
+    def set_rental_ppd(self, price):
+        if price > 0:
+            self.__rental_ppd = price
+        else:
+            print("Error: Price must be greater than 0.")
 
 class Car(Vehicle):
     def __init__(self, brand, model, year, rental_ppd, seats):
@@ -20,7 +26,7 @@ class Car(Vehicle):
         self.seats = seats
     
     def display_info(self):
-        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self.get_rental_ppd}/day")
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self.get_rental_ppd()}/day")
 
 class Bike(Vehicle):
     def __init__(self, brand, model, year, rental_ppd, engine):
@@ -28,7 +34,7 @@ class Bike(Vehicle):
         self.engine = engine
     
     def display_info(self):
-        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self.get_rental_ppd}/day")
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self.get_rental_ppd()}/day")
 
 car =[Car("Toyota", "Corolla", 2015, 50, 5)]
 bike = [Bike("Yamaha", "R1", 2019, 30, 998)]
@@ -36,3 +42,7 @@ car[0].display_info()
 bike[0].display_info()
 car[0].calculate_rental_cost(3)
 bike[0].calculate_rental_cost(4)
+car[0].set_rental_ppd(60)
+bike[0].set_rental_ppd(40)
+car[0].display_info()
+bike[0].display_info()
