@@ -41,14 +41,14 @@ def show_vehicle_info(vehicle):
 
 vehicles = []
 action = 0
-
-while action != 6:
+print("Bob's Car Rental Service")
+while action != 5:
     print("1. Add a Car")
     print("2. Add a Bike")
     print("3. Calculate Rental Cost")
     print("4. Set Rental Price")
-    print("5. Display Vehicle Information")
-    print("6. Exit")
+    print("5. Exit")
+    print("=====================================")
     action = int(input("Enter your choice: "))
     
     if action == 1:
@@ -60,6 +60,7 @@ while action != 6:
         car = Car(brand, model, year, rental_price, seats)
         vehicles.append(car)
         print("Car details have been added.")
+        print(" ")
     elif action == 2:
         brand = input("Brand: ")
         model = input("Model: ")
@@ -69,15 +70,31 @@ while action != 6:
         bike = Bike(brand, model, year, rental_price, engine)
         vehicles.append(bike)
         print("Bike details have been added.")
+        print(" ")
     elif action == 3:
         if vehicles:
             days = int(input("Enter the number of days to calculate rental costs: "))
+            print(" ")
             print("Rental Costs:")
+            print(" ")
             for vehicle in vehicles:
                 print(f"Rental cost for {vehicle.brand} {vehicle.model} for {days} days: ${vehicle.calculate_rental_cost(days)}")
+                print(" ")
         else:
             print("No vehicles available to calculate rental costs.")
+            print(" ")
+    elif action == 4:
+        if vehicles:
+            for vehicle in vehicles:
+                new_price = float(input(f"Enter new rental price for {vehicle.brand} {vehicle.model}: "))
+                vehicle.set_rental_ppd(new_price)
+            print("Rental price has been updated.")
+            print(" ")
+        else:
+            print("No vehicles available to update rental prices.")
+            print(" ")
     elif action == 5:
-        print("All Vehicles:")
-        for vehicle in vehicles:
-            show_vehicle_info(vehicle)
+        print("Exiting Bob's Car Rental Service")
+        print(" ")
+    else:
+        print("Invalid choice. Please try again.")
