@@ -7,7 +7,10 @@ class Vehicle:
         self.__old_rental_ppd = rental_ppd  # Store old rental price
 
     def display_info(self):
-        print(f"Brand: {self.brand}\nModel: {self.model}\nYear: {self.year}\nRental Price Per Day: ${self.__rental_ppd}/day")
+        print(f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}, Rental Price Per Day: ${self.__rental_ppd}/day")
+
+    def old_display_info(self):
+        print(f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}, Rental Price Per Day: ${self.__rental_ppd}/day")
 
     def calculate_rental_cost(self, days):
         return self.__rental_ppd * days
@@ -47,6 +50,7 @@ vehicles = []
 action = 0
 print("Bob's Car Rental Service")
 while action != 5:
+    print("=====================================")
     print("1. Add a Car")
     print("2. Add a Bike")
     print("3. Calculate Rental Cost")
