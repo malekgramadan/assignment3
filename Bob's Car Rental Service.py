@@ -9,7 +9,7 @@ class Vehicle:
         print(f"Brand: {self.brand}\nModel: {self.model}\nYear: {self.year}\nRental Price Per Day: ${self.__rental_ppd}/day")
 
     def calculate_rental_cost(self, days):
-        return print(f"Rental cost for the {self.brand} {self.model} for {days} days: ${int(self.__rental_ppd * days)}")
+        return self.__rental_ppd * days
     
     def get_rental_ppd(self):
         return self.__rental_ppd
@@ -66,3 +66,11 @@ while action != 6:
         bike = Bike(brand, model, year, rental_price, engine)
         vehicles.append(bike)
         print("Bike details have been added.")
+    elif action == 3:
+        if vehicles:
+            days = int(input("Enter the number of days to calculate rental costs: "))
+            print("Rental Costs:")
+            for vehicle in vehicles:
+                print(f"Rental cost for {vehicle.brand} {vehicle.model} for {days} days: ${vehicle.calculate_rental_cost(days)}")
+        else:
+            print("No vehicles available to calculate rental costs.")
