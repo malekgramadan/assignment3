@@ -4,6 +4,7 @@ class Vehicle:
         self.model = model
         self.year = year
         self.__rental_ppd = rental_ppd
+        self.__old_rental_ppd = rental_ppd  # Store old rental price
 
     def display_info(self):
         print(f"Brand: {self.brand}\nModel: {self.model}\nYear: {self.year}\nRental Price Per Day: ${self.__rental_ppd}/day")
@@ -13,6 +14,9 @@ class Vehicle:
     
     def get_rental_ppd(self):
         return self.__rental_ppd
+    
+    def get_old_rental_ppd(self):
+        return self.__old_rental_ppd
     
     def set_rental_ppd(self, price):
         if price > 0:
