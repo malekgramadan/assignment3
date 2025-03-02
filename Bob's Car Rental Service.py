@@ -32,6 +32,9 @@ class Car(Vehicle):
         super().__init__(brand, model, year, rental_ppd)
         self.seats = seats
     
+    def old_display_info(self):
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self.get_old_rental_ppd()}/day")
+
     def display_info(self):
         print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Seats: {self.seats}, Rental Price Per Day: ${self.get_rental_ppd()}/day")
 
@@ -40,8 +43,14 @@ class Bike(Vehicle):
         super().__init__(brand, model, year, rental_ppd)
         self.engine = engine
     
+    def old_display_info(self):
+        print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self.get_old_rental_ppd()}/day")
+    
     def display_info(self):
         print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self.get_rental_ppd()}/day")
+
+def show_old_vehicle_info(vehicle):
+    vehicle.old_display_info()
 
 def show_vehicle_info(vehicle):
     vehicle.display_info()
@@ -109,7 +118,7 @@ while action != 5:
 
 print("All Vehicles:")
 for vehicle in vehicles:
-    show_vehicle_info(vehicle)
+    show_old_vehicle_info(vehicle)
 
 print("Updated Vehicle Details:")
 for vehicle in vehicles:
