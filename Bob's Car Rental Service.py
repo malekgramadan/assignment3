@@ -36,6 +36,9 @@ class Bike(Vehicle):
     def display_info(self):
         print(f"Brand: {self.brand} {self.model}, Year: {self.year}, Engine: {self.engine}cc, Rental Price Per Day: ${self.get_rental_ppd()}/day")
 
+def show_vehicle_info(vehicle):
+    vehicle.display_info()
+
 vehicles = []
 action = 0
 
@@ -74,3 +77,7 @@ while action != 6:
                 print(f"Rental cost for {vehicle.brand} {vehicle.model} for {days} days: ${vehicle.calculate_rental_cost(days)}")
         else:
             print("No vehicles available to calculate rental costs.")
+    elif action == 5:
+        print("All Vehicles:")
+        for vehicle in vehicles:
+            show_vehicle_info(vehicle)
