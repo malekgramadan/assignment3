@@ -98,3 +98,11 @@ while action != 5:
         print(" ")
     else:
         print("Invalid choice. Please try again.")
+
+print("All Vehicles:")
+for vehicle in vehicles:
+    show_vehicle_info(vehicle)
+
+print("Updated Vehicle Details:")
+for vehicle in vehicles:
+    show_vehicle_info(vehicle)
